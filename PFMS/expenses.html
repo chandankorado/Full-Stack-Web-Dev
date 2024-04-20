@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Record Expense</title>
+  <style>
+    body {
+      background-color: rgb(198, 219, 236);
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 50px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .container h2 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .form-group button {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #61ccc7;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background-color: #61ccc7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 style="color:rgb(97, 121, 167);">Record Expense</h2>
+    <form id="expense-form">
+      <div class="form-group">
+        <label for="title" style="color:rgb(97, 121, 167);">Title:</label>
+        <input type="text" id="title" placeholder="Enter a title" required>
+      </div>
+      <div class="form-group">
+        <label for="amount" style="color:rgb(97, 121, 167);">Amount (SAR):</label>
+        <input type="number" id="amount" placeholder="Enter the amount" required>
+      </div>
+      <div class="form-group">
+        <label for="account" style="color:rgb(97, 121, 167);">Account:</label>
+        <input type="text" id="account" placeholder="Enter the account" required>
+      </div>
+      <div class="form-group">
+        <label for="category" style="color:rgb(97, 121, 167);">Category:</label>
+        <select id="category" required>
+          <option value="">Select a category</option>
+          <option value="Bills">Bills</option>
+          <option value="Groceries">Groceries</option>
+          <option value="Transportation">Transportation</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date" style="color:rgb(97, 121, 167);">Date:</label>
+        <input type="date" id="date" required>
+      </div>
+      <div class="form-group">
+        <label for="note" style="color:rgb(97, 121, 167);">Note:</label>
+        <textarea id="note" rows="4" placeholder="Enter a note"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

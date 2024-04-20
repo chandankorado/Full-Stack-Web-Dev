@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery_lib/jquery-3.6.0.js"></script>
+<script>
+$(document).ready(function(){
+  $("#p1").hover(function(){
+    alert("Entered password!");
+  },
+  function(){
+    alert("Bye! its wrong password!");
+  }); 
+});
+</script>
+</head>
+<body>
+
+<p id="p1">Don't Touch Me!</p>
+
+</body>
+</html>

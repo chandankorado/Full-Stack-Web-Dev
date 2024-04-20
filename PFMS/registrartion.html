@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Page </title>
+  <style>
+    body {
+      background-color: rgb(198, 219, 236);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 5px;
+      padding: 50px;
+      padding-top:10px ;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .container h2 {
+      text-align: center;
+    }
+
+    .container input {
+      display: block;
+      width: 90%;
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .container button {
+      width: 60%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #61ccc7;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .container button:hover {
+      background-color: #61ccc7;
+    }
+
+    .container p {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .container p span {
+      color: blue;
+      cursor: pointer;
+    }
+    h1 {
+      color: white;
+			font-size: 32px;
+			font-weight: bold;
+			font-style: oblique;
+			font-display:block;
+       text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+        }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <center><h1>FinanceLytic</h1></center>
+    <h3 style="color:rgb(97, 121, 167);">Registration</h3>
+    <form id="registration-form">
+      <input type="text" id="firstName" placeholder="First Name" required>
+      <input type="text" id="lastName" placeholder="Last Name" required>
+      <input type="email" id="email" placeholder="Email Address" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="password" id="password" placeholder=" Confirm Password" required>
+      <center><button type="submit">Create Account</button></center>
+    </form>
+    <p>Already have an account? <span id="login-form"><a href="login.html">Login</a></span></p>
+  </div>
+
+  <script>
+    document.getElementById("login-link").addEventListener("click", function() {
+      alert("Redirect to login page.");
+    });
+  </script>
+</body>
+</html>

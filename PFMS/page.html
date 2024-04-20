@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FinanceLytic - Budget Management</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgb(198, 219, 236);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-basis: 100%;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: flex-start;
+            opacity: 0.7;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 30px;
+            border-radius: 4px;
+        }
+
+        .menu a:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        .menu a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .charts {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px; /* Added gap */
+        }
+
+        .progress-bar {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .progress-bar-title {
+            margin-bottom: 10px;
+        }
+
+        .progress {
+            height: 20px;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background-color: #5762c7;
+            transition: width 0.5s ease-in-out;
+        }
+
+        .transactions {
+            margin-top: 30px;
+        }
+
+        .transactions-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .transactions-count {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .view-transactions {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            padding: 6px 12px;
+            border-radius: 4px;
+            background-color: #f1f1f1;
+        }
+
+        .view-transactions:hover {
+            background-color: #e0e0e0;
+        }
+        .button a {
+			display: inline-block;
+			margin-left: 70px;
+			padding: 15px 70px;
+			background-color: #3f51b5;
+			color: white;
+			text-decoration: none;
+			border-radius: 4px;
+			font-size: 14px;
+		}
+        h1 {
+      color: white;
+			font-size: 45px;
+			font-weight: bold;
+			font-style: oblique;
+			font-display:block;
+       text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo"><h1>FinanceLytic</h1></div>
+            <div class="menu">
+                <a href="#">Income</a>
+                <a href="#">Expense</a>
+                <a href="#">Budget</a>
+            </div>
+        </div>
+        <div class="charts">
+            <canvas id="incomeChart" width="50" height="50"></canvas>
+        </div>
+        <div class="progress-bar">
+            <h3><div class="progress-bar-title">Income</div></h3>
+            <p>0 Transaction</p>
+            <div class="progress">
+                <div class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+            <h3><div class="progress-bar-title">Expenses</div></h3>
+            <p>0 Transaction</p>
+            <div class="progress">
+                <div class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+            <br><br><br>
+            <div class="button">
+                <a href="income.html">Income</a>
+                <a href="expenses.html">Expenses</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Data for the income chart
+        var incomeData = {
+            labels: ['Income','Expense'],
+            datasets: [{
+                data: [500000,200000],
+                backgroundColor: ['#5762c7', '#c7575d']
+            }]
+        };
+
+
+
+        // Configuration options for the doughnut charts
+        var options = {
+            responsive: true,
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            }
+        };
+
+        // Create the income chart
+        var incomeChart = new Chart(document.getElementById('incomeChart'), {
+            type: 'doughnut',
+            data: incomeData,
+            options: options
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+document.write("external file is excuted !");
